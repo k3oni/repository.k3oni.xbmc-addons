@@ -1,0 +1,23 @@
+1.2.8 - Fixed CNN streams
+
+1.2.7 - Fixed the Euronews stream and added a French one as well
+
+1.2.6 - Added BBC News. Modifications regarding the BBC channels list
+
+1.2.5 - Fixed a few streams. Added CNBC, PressTV, Bloomberg and Sky News. Small code changes.
+
+1.2.4 - Fixed Al-Jazeera streams
+
+1.2.3 - Added AJ Arabic (thanks FirasAlShafei)
+
+1.2.2 - replaced ABC24 Logo
+
+1.2.1 - Fixed Type-o
+
+1.2.0 - Added a bunch more channels
+
+1.1.0 - added custom stream support
+
+1.0.0 - fixed version number bug.
+
+0.0.1 - initial release.  supports al-jazeera english, cnn and cspan
