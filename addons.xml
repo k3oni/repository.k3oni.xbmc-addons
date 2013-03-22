@@ -20,7 +20,7 @@
 
 <addon id="plugin.video.world.news.live"
        name="World News Live"
-       version="1.2.8"
+       version="1.2.9"
        provider-name="K3oni">
   <requires>
     <import addon="xbmc.python"
