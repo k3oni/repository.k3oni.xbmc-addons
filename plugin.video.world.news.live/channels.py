@@ -141,7 +141,8 @@ class PRESSTV(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('rtmp://media4.lsops.net/live/presstv_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/press-tv" live=true')
+	#self.plugin.set_stream_url('rtmp://media4.lsops.net/live/presstv_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/press-tv" live=true')
+	self.plugin.set_stream_url('rtmp://cp140005.live.edgefcs.net:1935/live/PressTV_RTMP_3@87306 swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/press-tv" live=true')
 
 class Bloomberg(BaseChannel):
     playable = True
@@ -150,8 +151,8 @@ class Bloomberg(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('rtmp://media7.lsops.net/live/bloomber_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/bloomberg" live=true')
-	
+	#self.plugin.set_stream_url('rtmp://media7.lsops.net/live/bloomber_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/bloomberg" live=true')
+	self.plugin.set_stream_url('rtmp://cp116697.live.edgefcs.net:80/live/BnazlkNDpCIcD-QkfyZCQKlRiiFnVa5I_640_360_440@18679 swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/bloomberg" live=true')
 class SkyNews(BaseChannel):
     playable = True
     short_name = 'skynews'
