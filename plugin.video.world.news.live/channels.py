@@ -36,7 +36,7 @@ class AlJazeeraEnglish(BaseChannel):
         data = {}
         data.update(self.args)
 	data.update({'action': 'play_stream', 'Title': 'Very High Definition', 'stream_url': 'rtmp://media2.lsops.net/live playpath=aljazeer_en_veryhigh.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageURL="http://www.livestation.com/channels/3-al-jazeera-english-english" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
+	self.plugin.add_list_item(data, is_folder=False)
 	data.update({'action': 'play_stream', 'Title': 'High Definition', 'stream_url': 'rtmp://media2.lsops.net/live playpath=aljazeer_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageURL="http://www.livestation.com/channels/3-al-jazeera-english-english" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Standard Definition', 'stream_url': 'rtmp://media2.lsops.net/live playpath=aljazeer_en_medium.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageURL="http://www.livestation.com/channels/3-al-jazeera-english-english" swfVfy=true live=true'})
@@ -75,7 +75,7 @@ class CNBC(BaseChannel):
     default_action = 'play_stream' 
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://media7.lsops.net/live/ playpath=cnbc_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/en/cnbc" swfVfy=true live=true')
+        self.plugin.set_stream_url('rtmp://d.cdn.livenewschat.eu/edge playpath=cnbc_live swfUrl="http://msnbclive.eu/player.swf" pageUrl="http://www.livenewschat.tv/stock-traders/chat/" swfVfy=true live=true')
 
         
 class RT(BaseChannel):
@@ -153,6 +153,7 @@ class Bloomberg(BaseChannel):
     def action_play_stream(self):
 	#self.plugin.set_stream_url('rtmp://media7.lsops.net/live/bloomber_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/bloomberg" live=true')
 	self.plugin.set_stream_url('rtmp://cp116697.live.edgefcs.net:80/live/BnazlkNDpCIcD-QkfyZCQKlRiiFnVa5I_640_360_440@18679 swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/bloomberg" live=true')
+
 class SkyNews(BaseChannel):
     playable = True
     short_name = 'skynews'
@@ -172,9 +173,9 @@ class France24(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/en/ playpath=f24_liveen swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
+	data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://vipwowza.yacast.net/france24_live_en/ playpath=f24_liveen.stream swfUrl="http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player_new.swf" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/fr/ playpath=f24_livefr swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
+	data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'rtmp://vipwowza.yacast.net/france24_live_fr/ playpath=f24_livefr.stream swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player_new.swf" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
