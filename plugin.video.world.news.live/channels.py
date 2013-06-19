@@ -75,8 +75,8 @@ class CNBC(BaseChannel):
     default_action = 'play_stream' 
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://d.cdn.livenewschat.eu/edge playpath=cnbc_live swfUrl="http://msnbclive.eu/player.swf" pageUrl="http://www.livenewschat.tv/stock-traders/chat/" swfVfy=true live=true')
-
+        #self.plugin.set_stream_url('rtmp://d.cdn.livenewschat.eu/edge playpath=cnbc_live swfUrl="http://msnbclive.eu/player.swf" pageUrl="http://www.livenewschat.tv/stock-traders/chat/" swfVfy=true live=true')
+	self.plugin.set_stream_url('http://livestation_hls-lh.akamaihd.net/i/cnbc_en@106428/master.m3u8')
         
 class RT(BaseChannel):
     playable = False
