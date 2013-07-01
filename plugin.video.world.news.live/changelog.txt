@@ -1,3 +1,5 @@
+1.3.1.8 - Moved ABC News to folder list, added non restricted stream to list
+
 1.3.1.7 - Hided BigPond News; Changed to GeoRestricted ABC News 24 (Australia)
 
 1.3.1.6 - Fixed SkyNews International, CNN, BBC World News, Aljazeera (EN, AR)
