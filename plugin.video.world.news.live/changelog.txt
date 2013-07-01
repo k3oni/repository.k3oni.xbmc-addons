@@ -1,4 +1,18 @@
-1.3.1.0 - Fixed CNBC stream
+1.3.1.7 - Hided BigPond News; Changed to GeoRestricted ABC News 24 (Australia)
+
+1.3.1.6 - Fixed SkyNews International, CNN, BBC World News, Aljazeera (EN, AR)
+
+1.3.1.5 - Added eNCA, Deutsche Welle,  
+
+1.3.1.4 - Added arabic language to France24, RT
+
+1.3.1.3 - Added BigPond News
+
+1.3.1.2 - Fixed Bloomberg, Euronews, PressTV
+
+1.3.1.1 - Fixed CNBC
+
+1.3.1 - Fixed France24
 
 1.3.0.1 - Small change on the repo including WNL
 

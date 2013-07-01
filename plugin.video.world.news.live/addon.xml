@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.world.news.live"
        name="World News Live"
-       version="1.3.1.0"
-       provider-name="K3oni">
+       version="1.3.1.7"
+       provider-name="K3oni, moneymaker, andre_pl">
   <requires>
     <import addon="xbmc.python"
     		version="1.0"/>
