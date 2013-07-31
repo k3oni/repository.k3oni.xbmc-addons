@@ -1,3 +1,4 @@
+
 import time
 import simplejson
 from channel import BaseChannel, ChannelException,ChannelMetaClass, STATUS_BAD, STATUS_GOOD, STATUS_UGLY
@@ -80,15 +81,15 @@ class ABCNews24(BaseChannel):
 class BBC(BaseChannel):
     playable = False
     short_name = 'bbc'
-    long_name = 'BBC Live'
+    long_name = 'BBC'
     default_action = 'list_streams'
 
     def action_list_streams(self):
 	data = {}
 	data.update(self.args)
+#     data.update({'action': 'play_stream', 'Title': 'BBC News', 'stream_url': 'rtmp://media4.lsops.net/live/ playpath=bbcnews_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true'})
+#         self.plugin.add_list_item(data, is_folder=False)
 	data.update({'action': 'play_stream', 'Title': 'BBC World News', 'stream_url': 'http://akamedia2.lsops.net/live/bbcworld1_en.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'BBC News', 'stream_url': 'rtmp://media4.lsops.net/live/ playpath=bbcnews_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
 	self.plugin.end_list()
 
@@ -148,6 +149,30 @@ class RT(BaseChannel):
         data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'rtmp://rt.fms.visionip.tv/live/ app=live swfurl=http://actualidad.rt.com/swf/player.swf pageurl=http://actualidad.rt.com/mas/envivo/ playpath=RT_Spanish_3 swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'rtmp://russiatoday.fms.visionip.tv/rt/Russia_al_yaum_1000k_1 app=rt/Russia_al_yaum_1000k_1 swfurl=http://arabic.rt.com/style/liveplayer.swf pageurl=http://arabic.rt.com/live_high playpath=1000k_1 swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
+
+#############
+## i24news ##
+#############
+        
+class i24news(BaseChannel):
+    playable = False
+    short_name = 'i24news'
+    long_name = 'i24news'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://brightcove03-f.akamaihd.net/english_1_650@117902 '})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'http://brightcove03-f.akamaihd.net/french_1_650@117902'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://brightcove03-f.akamaihd.net/arabic_1_650@117902'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
