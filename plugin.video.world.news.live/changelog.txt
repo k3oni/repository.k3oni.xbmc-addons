@@ -1,3 +1,11 @@
+1.3.2.3 - Fixed eNCA, PressTV
+
+1.3.2.2 - Added Reuters, Channel NewsAsia International
+
+1.3.2.1 - Added Bloomberg U.S., Asia, Europe and Live Event
+
+1.3.2.0 - Fixed Bloomberg
+
 1.3.1.9 - Added i24news, Hided BBC News 
 
 1.3.1.8 - Moved ABC News to folder list, added non restricted stream to list

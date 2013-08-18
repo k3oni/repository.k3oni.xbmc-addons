@@ -109,9 +109,9 @@ class BBC(BaseChannel):
 #     def action_list_streams(self):
 #         data = {}
 #         data.update(self.args)
-#         data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'http://bptvlive.ngcdn.telstra.com/bp_online_bpnews_high'})
+#         data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'mmsh://lon-cdn220-is-3.se.bptvlive.ngcdn.telstra.com/bp_online_bpnews_high'})
 #         self.plugin.add_list_item(data, is_folder=False)
-#         data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'http://bptvlive.ngcdn.telstra.com/bp_online_bpnews_low'})
+#         data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'mmsh://lon-cdn220-is-3.se.bptvlive.ngcdn.telstra.com/bp_online_bpnews_low'})
 #         self.plugin.add_list_item(data, is_folder=False)
 #         self.plugin.end_list()
 # 
@@ -242,30 +242,71 @@ class NASATV(BaseChannel):
         self.plugin.set_stream_url(self.args['stream_url'])
 
 #############
+## Reuters ##
+#############	
+
+class REUTERS(BaseChannel):
+    playable = True
+    short_name = 'reuters'
+    long_name = 'Reuters'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('http://hd5.lsops.net/live/reuters_en_hls.smil/playlist.m3u8')
+
+#############
 ## PressTV ##
 #############	
 
 class PRESSTV(BaseChannel):
     playable = True
     short_name = 'presstv'
-    long_name = 'PRESS TV'
+    long_name = 'PressTV'
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('http://presstv_hls-lh.akamaihd.net/i/presstv_en@104592/master.m3u8')
+	self.plugin.set_stream_url('http://media23.lsops.net/live/presstv_en_hls.smil/playlist.m3u8')
 
 ###############
 ## Bloomberg ##
 ###############
 
-class Bloomberg(BaseChannel):
-    playable = True
+class EuroNews(BaseChannel):
+    playable = False
     short_name = 'bloomberg'
     long_name = 'Bloomberg Television'
-    default_action = 'play_stream'
+    default_action = 'list_streams'
     
-    def action_play_stream(self):
-	self.plugin.set_stream_url('rtmp://media4.lsops.net/live/bloomber_en_high.sdp swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" pageUrl="http://www.livestation.com/en/bloomberg" live=true')
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data.update({'action': 'play_stream', 'Title': 'Bloomberg TV', 'stream_url': 'http://hd4.lsops.net/live/bloomber_en_hls.smil/playlist.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Bloomberg U.S.', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/BnazlkNDpCIcD-QkfyZCQKlRiiFnVa5I_640_360_1000@18679'})
+        self.plugin.add_list_item(data, is_folder=False)
+	data.update({'action': 'play_stream', 'Title': 'Bloomberg Europe', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/x0dDdlNTrs64I5H-29bfEFu4qeIira5r_640_360_500@73162'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Bloomberg Asia', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/w4dTdlNToKUvtqJ1WMDu5IuNP9as1iF0_640_360_500@73163'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Bloomberg Live Event', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/d4djdlNTp9RsC5puRTQdXZanlGOm0d8Q_640_360_1000@73166'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
+
+####################################
+## Channel NewsAsia International ##
+####################################
+
+class eNCA(BaseChannel):
+    playable=True
+    short_name = 'channel_newsasia'
+    long_name = "Channel NewsAsia International (Geo-restricted)"
+    default_action = 'play_stream'
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url('http://cna_hls-lh.akamaihd.net/i/cna_en@8000/master.m3u8')
 	
 ##########
 ## eNCA ##
@@ -278,7 +319,7 @@ class eNCA(BaseChannel):
     default_action = 'play_stream'
 
     def action_play_stream(self):        
-        self.plugin.set_stream_url('rtmp://media10.lsops.net/live playpath=enca_en_high.sdp swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" pageURL="http://www.livestation.com/" swfVfy=true live=true')
+        self.plugin.set_stream_url('http://hd7.lsops.net/live/enca_en_hls.smil/playlist.m3u8')
 
 ############################
 ## Sky News International ##
