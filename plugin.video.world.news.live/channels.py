@@ -89,7 +89,7 @@ class BBC(BaseChannel):
 	data.update(self.args)
 #     data.update({'action': 'play_stream', 'Title': 'BBC News', 'stream_url': 'rtmp://media4.lsops.net/live/ playpath=bbcnews_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true'})
 #         self.plugin.add_list_item(data, is_folder=False)
-	data.update({'action': 'play_stream', 'Title': 'BBC World News', 'stream_url': 'http://akamedia2.lsops.net/live/bbcworld1_en.smil/playlist.m3u8'})
+	data.update({'action': 'play_stream', 'Title': 'BBC World News', 'stream_url': 'http://bbcworld.lsops.net/live/bbcworld_en_hls.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
 	self.plugin.end_list()
 
@@ -168,7 +168,7 @@ class i24news(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://brightcove03-f.akamaihd.net/english_1_650@117902 '})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://brightcove03-f.akamaihd.net/english_1_650@117902'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'http://brightcove03-f.akamaihd.net/french_1_650@117902'})
         self.plugin.add_list_item(data, is_folder=False)
@@ -321,18 +321,27 @@ class eNCA(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url('http://hd7.lsops.net/live/enca_en_hls.smil/playlist.m3u8')
 
-############################
-## Sky News International ##
-############################
+##############
+## Sky News ##
+##############
 
 class SkyNews(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'skynews'
-    long_name = 'Sky News International'
-    default_action = 'play_stream'
+    long_name = 'Sky News'
+    default_action = 'list_streams'
     
-    def action_play_stream(self):
-	self.plugin.set_stream_url('http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8')
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+#         data.update({'action': 'play_stream', 'Title': 'Sky News', 'stream_url': 'http://bskybwlivewm.fplive.net/bsbskynews109-live/bskyb-live109-high?token=?'})
+#         self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Sky News International (UK Only)', 'stream_url': 'http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
 ##############
 ## France24 ##
