@@ -1,3 +1,7 @@
+1.3.3.4 - Added 24 Vesti
+
+1.3.3.3 - Added The People’s Voice
+
 1.3.3.2 - Fixed BBC World News
 
 1.3.3.1 - Added NHK World, CCTV News, Arirang TV World, MHz Worldview
