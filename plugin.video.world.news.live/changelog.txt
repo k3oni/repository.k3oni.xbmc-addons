@@ -1,3 +1,7 @@
+1.3.4.1 - Changing size of the logos, cleaned up code, Added Sky News (TEST PURPOSE ONLY)
+
+1.3.4 - Added Al Aan, Al Alam, Al Jazeera America, Al Mayadeen, Al Nabaa TV, BBC Arabic, Nasa TV () HD, VoA Persian, DVB, NDTV 24x7, tagesschau24
+
 1.3.3.4 - Added 24 Vesti
 
 1.3.3.3 - Added The People’s Voice
