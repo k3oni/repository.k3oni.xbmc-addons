@@ -16,7 +16,7 @@ __plugin__ = "World News Live"
 __author__ = 'Florian Neagu <michaelneagu@gmail.com>'
 __url__ = 'http://world-news-live.googlecode.com/svn/trunk'
 __date__ = '1-10-2013'
-__version__ = '1.2.8'
+__version__ = '1.2.7'
 __settings__ = xbmcaddon.Addon(id='plugin.video.world.news.live')
 
 

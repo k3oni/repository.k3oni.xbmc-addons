@@ -1,4 +1,8 @@
-1.3.4.1 - Changing size of the logos, cleaned up code, Added Sky News (TEST PURPOSE ONLY)
+1.3.4.3 - Fixed i24News
+
+1.3.4.2 - Fixed BBC News, RT, Reuters, France24, Sky News Arabia, Removed DVB
+
+1.3.4.1 - Changing size of the logos, cleaned up code, Added Sky News
 
 1.3.4 - Added Al Aan, Al Alam, Al Jazeera America, Al Mayadeen, Al Nabaa TV, BBC Arabic, Nasa TV () HD, VoA Persian, DVB, NDTV 24x7, tagesschau24
 
