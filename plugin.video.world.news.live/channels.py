@@ -218,6 +218,19 @@ class BBCARABIC(BaseChannel):
 
     def action_play_stream(self):
         self.plugin.set_stream_url('rtmp://hd7.lsops.net/live/ playpath=bbcarab_ar_364 swfUrl=http://static.ls-cdn.com/player/5.10/livestation-player.swf swfVfy=1 live=1')
+
+##############
+## BBC News ##
+##############
+        
+class BBCNEWS(BaseChannel):
+    playable = True
+    short_name = 'bbcnews_en'
+    long_name = 'BBC News'
+    default_action = 'play_stream'
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('rtmp://hd4.lsops.net/live/ playpath=bbcnews_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true')
         
 ####################
 ## BBC World News ##
@@ -232,7 +245,7 @@ class BBCWORLD(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd4.lsops.net/live/ playpath=bbcnews_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+	data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'http://u.to/r86MBg'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/bbcworld_en@105465/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
@@ -406,6 +419,28 @@ class REUTERS(BaseChannel):
     
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://37.58.85.156/rlo001/ngrp:rlo001.stream_all/playlist.m3u8')
+
+################
+## Rai News24 ##
+################
+
+class RAINEWS24(BaseChannel):
+    playable = False
+    short_name = 'rainews24'
+    long_name = 'Rai News24 (Geo-restricted)'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://rainews.lsops.net/live/ playpath=rainews_it_584 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://rainews.lsops.net/live/rainews_it_hls.smil/playlist.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
 #############
 ## PressTV ##
@@ -638,14 +673,25 @@ class MHz(BaseChannel):
 #########
 
 class CNN(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'cnn'
     long_name = 'CNN International'
-    default_action = 'play_stream'
-    
+    default_action = 'list_streams'
+
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd1.lsops.net/live/ playpath=cnn_en_584 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://hd1.lsops.net/live/ playpath=cnn_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/cnn_en@105455/master.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
     def action_play_stream(self):
-	self.plugin.set_stream_url('http://livestation_hls-lh.akamaihd.net/i/cnn_en@105455/master.m3u8')
-	
+        self.plugin.set_stream_url(self.args['stream_url'])
+
 ##############
 ## 24 Vesti ##
 ##############
