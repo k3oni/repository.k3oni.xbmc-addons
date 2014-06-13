@@ -24,7 +24,7 @@
        version="1.2.11"
        provider-name="spbogie">
   <requires>
-    <import addon="xbmc.python" version="1.0"/>
+    <import addon="xbmc.python" version="2.1.0"/>
   </requires>
   <extension point="xbmc.python.script"
              library="default.py">
