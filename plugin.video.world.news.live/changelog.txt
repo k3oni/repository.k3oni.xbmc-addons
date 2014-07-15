@@ -1,3 +1,5 @@
+1.3.5.2 - Fix Al Jazeera English, remove Al Jazeera US, remove Sky News International for now
+
 1.3.5.1 - Fixed Mhz, NHK
 
 1.3.5 - edit add-on.xml, added import modules
