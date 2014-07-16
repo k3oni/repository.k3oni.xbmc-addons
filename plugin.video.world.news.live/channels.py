@@ -248,23 +248,23 @@ class BBCNEWS(BaseChannel):
 ## BBC World News ##
 ####################
         
-class BBCWORLD(BaseChannel):
-    playable = False
-    short_name = 'bbcworld_en'
-    long_name = 'BBC World News'
-    default_action = 'list_streams'
+#class BBCWORLD(BaseChannel):
+#    playable = False
+#    short_name = 'bbcworld_en'
+#    long_name = 'BBC World News'
+#    default_action = 'list_streams'
     
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'http://u.to/r86MBg'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/bbcworld_en@105465/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
+#    def action_list_streams(self):
+#        data = {}
+#        data.update(self.args)
+#	data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'http://87.251.151.253:4022/udp/230.3.3.20:5678'})
+#        self.plugin.add_list_item(data, is_folder=False)
+#        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/bbcworld_en@105465/master.m3u8'})
+#        self.plugin.add_list_item(data, is_folder=False)
+#        self.plugin.end_list()
 
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
+#    def action_play_stream(self):        
+#        self.plugin.set_stream_url(self.args['stream_url'])
 
 #################
 ## BigPondNews ##
@@ -472,28 +472,13 @@ class PRESSTV(BaseChannel):
 ###############
 
 class BLOOMBERG(BaseChannel):
-    playable = False
+    playable = True
     short_name = 'bloomberg_en'
     long_name = 'Bloomberg Television'
-    default_action = 'list_streams'
+    default_action = 'play_stream'
     
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Bloomberg TV', 'stream_url': 'http://live.bltvios.com.edgesuite.net/tv/us/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Bloomberg U.S.', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/BnazlkNDpCIcD-QkfyZCQKlRiiFnVa5I_640_360_1000@18679'})
-        self.plugin.add_list_item(data, is_folder=False)
-	data.update({'action': 'play_stream', 'Title': 'Bloomberg Europe', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/x0dDdlNTrs64I5H-29bfEFu4qeIira5r_640_360_500@73162'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Bloomberg Asia', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/w4dTdlNToKUvtqJ1WMDu5IuNP9as1iF0_640_360_500@73163'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Bloomberg Live Event', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/d4djdlNTp9RsC5puRTQdXZanlGOm0d8Q_640_360_1000@73166'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
     def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
+        self.plugin.set_stream_url('http://live.bltvios.com.edgesuite.net/tv/us/master.m3u8')
 
 ####################################
 ## Channel NewsAsia International ##
@@ -534,12 +519,12 @@ class SkyNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Sky News', 'stream_url': 'mms://bskybwlivewm.fplive.net/bskybnewsfree-live/skynews-300k?token=ZW5kX3RpbWU9MjAxMzEyMDkxNzA4MjMmZGlnZXN0PWNlYWMyOTQ5YjcyMjk1N2ZlZGRkNzcyOTRhMGFjMWQw'})
+	data.update({'action': 'play_stream', 'Title': 'Sky News Medium', 'stream_url': 'http://87.121.34.2:9987/udp/239.100.0.134:1234'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Sky News Arabia', 'stream_url': 'http://hd7.lsops.net/live/skynewsi_ar_hls.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Sky News International', 'stream_url': 'http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
+        #data.update({'action': 'play_stream', 'Title': 'Sky News International', 'stream_url': 'http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8'})
+        #self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
     def action_play_stream(self):        
@@ -658,14 +643,14 @@ class NHK(BaseChannel):
 ## CCTV News ##
 ###############
 
-class CCTV(BaseChannel):
-    playable = True
-    short_name = 'cctv_news_english'
-    long_name = 'CCTV News'
-    default_action = 'play_stream' 
+#class CCTV(BaseChannel):
+#    playable = True
+#    short_name = 'cctv_news_english'
+#    long_name = 'CCTV News'
+#    default_action = 'play_stream' 
 
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://88.212.11.206:5000/live/22/22.m3u8')   
+#    def action_play_stream(self):
+#        self.plugin.set_stream_url('http://88.212.11.206:5000/live/22/22.m3u8')   
 
 ###################
 ## MHz Worldview ##

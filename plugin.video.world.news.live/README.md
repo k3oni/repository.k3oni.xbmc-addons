@@ -37,7 +37,7 @@ Credits
 	Initial addon development.
 
 [repository1]: https://github.com/k3oni/repository.k3oni.xbmc/archive/master.zip
-[repository2]: https://home.no/xbmcplus/fusion/repository/
+[repository2]: https://github.com/moneymaker365/repository.xbmcplus.xbmc-plugins/releases
 [githubzip]: https://github.com/k3oni/plugin.video.world.news.live/archive/master.zip
 [issues]: https://github.com/k3oni/plugin.video.world.news.live/
 [gist]: https://gist.github.com
