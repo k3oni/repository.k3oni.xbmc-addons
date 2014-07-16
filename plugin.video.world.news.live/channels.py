@@ -670,24 +670,13 @@ class MHz(BaseChannel):
 #########
 
 class CNN(BaseChannel):
-    playable = False
+    playable = True
     short_name = 'cnn'
     long_name = 'CNN International'
-    default_action = 'list_streams'
-
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd1.lsops.net/live/ playpath=cnn_en_584 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://hd1.lsops.net/live/ playpath=cnn_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/cnn_en@105455/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
+    default_action = 'play_stream'
 
     def action_play_stream(self):
-        self.plugin.set_stream_url(self.args['stream_url'])
+        self.plugin.set_stream_url('http://87.121.34.2:9987/udp/239.100.0.161:1234')
 
 ##############
 ## 24 Vesti ##
