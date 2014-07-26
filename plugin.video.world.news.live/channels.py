@@ -676,7 +676,7 @@ class CNN(BaseChannel):
     default_action = 'play_stream'
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('http://87.121.34.2:9987/udp/239.100.0.161:1234')
+        self.plugin.set_stream_url('http://hls.novotelecom.ru/streaming/cnn/tvrec/playlist.m3u8')
 
 ##############
 ## 24 Vesti ##
