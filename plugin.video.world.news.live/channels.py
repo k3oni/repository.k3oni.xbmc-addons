@@ -401,6 +401,19 @@ class REUTERS(BaseChannel):
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://37.58.85.156/rlo001/ngrp:rlo001.stream_all/playlist.m3u8')
 
+########
+## UT ##
+########	
+
+class UT(BaseChannel):
+    playable = True
+    short_name = 'ut'
+    long_name = 'Ukraine Today'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/live/mp4:380555/playlist.m3u8')
+
 ################
 ## Rai News24 ##
 ################
