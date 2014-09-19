@@ -235,14 +235,14 @@ class BBCARABIC(BaseChannel):
 ## BBC News ##
 ##############
         
-class BBCNEWS(BaseChannel):
-    playable = True
-    short_name = 'bbcnews_en'
-    long_name = 'BBC News'
-    default_action = 'play_stream'
+#class BBCNEWS(BaseChannel):
+#    playable = True
+#    short_name = 'bbcnews_en'
+#    long_name = 'BBC News'
+#    default_action = 'play_stream'
 
-    def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://hd4.lsops.net/live/ playpath=bbcnews_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true')
+#    def action_play_stream(self):
+#        self.plugin.set_stream_url('rtmp://hd4.lsops.net/live/ playpath=bbcnews_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true')
 
 ####################
 ## BBC World News ##
@@ -652,13 +652,23 @@ class MHz(BaseChannel):
 #########
 
 class CNN(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'cnn'
     long_name = 'CNN International'
-    default_action = 'play_stream'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data['action'] = 'play_stream'
+        data.update({'stream_url': "http://hls.novotelecom.ru/streaming/cnn/tvrec/playlist.m3u8", 'Title': 'High Quality'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'stream_url': "http://cnn-hls.live.numericable.tv/live/hls/cnn/ipad.m3u8", 'Title': 'Medium Quality'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
 
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://hls.novotelecom.ru/streaming/cnn/tvrec/playlist.m3u8')
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
 ##############
 ## 24 Vesti ##
