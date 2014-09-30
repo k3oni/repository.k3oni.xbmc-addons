@@ -1,3 +1,5 @@
+1.3.5.9 - Fix Sky News
+
 1.3.5.8 - Add CNN Medium, remove BBC News for now
 
 1.3.5.7 - Add Ukraine Today

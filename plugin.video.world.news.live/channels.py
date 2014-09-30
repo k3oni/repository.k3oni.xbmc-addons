@@ -501,7 +501,7 @@ class SkyNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'Sky News Medium', 'stream_url': 'http://87.121.34.2:9987/udp/239.100.0.134:1234'})
+	data.update({'action': 'play_stream', 'Title': 'Sky News Medium', 'stream_url': 'http://93.155.252.19:40665/udp/239.1.1.209:4000'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Sky News Arabia', 'stream_url': 'http://hd7.lsops.net/live/skynewsi_ar_hls.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
