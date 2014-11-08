@@ -1,3 +1,5 @@
+1.3.6.1 - Fix BBC World News
+
 1.3.6.0 - Fix Sky News
 
 1.3.5.9 - Fix Sky News

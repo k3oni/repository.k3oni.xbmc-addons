@@ -255,7 +255,7 @@ class BBCWORLD(BaseChannel):
     default_action = 'play_stream'
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('http://149.255.39.122/aasd/8612/index.m3u8')
+        self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_world/ls_satlink/b_,264,528,828,.m3u8')
         
 ##########
 ## CNBC ##
