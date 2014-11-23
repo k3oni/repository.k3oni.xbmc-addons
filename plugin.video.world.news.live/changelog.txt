@@ -1,3 +1,5 @@
+1.3.7 - Fix BBC Arabic, Sky News, eNCA, UAToday logo. Added ABC News
+
 1.3.6.1 - Fix BBC World News
 
 1.3.6.0 - Fix Sky News

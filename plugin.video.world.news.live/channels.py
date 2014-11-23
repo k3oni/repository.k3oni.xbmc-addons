@@ -196,6 +196,19 @@ class VoAPersian(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
 
+##############
+## ABC News ##
+##############
+        
+class ABCNEWS(BaseChannel):
+    playable = True
+    short_name = 'abcnews'
+    long_name = 'ABC News'
+    default_action = 'play_stream'
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200')
+
 ###############
 ## ABCNews24 ##
 ###############  
@@ -229,7 +242,7 @@ class BBCARABIC(BaseChannel):
     default_action = 'play_stream'
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://hd7.lsops.net/live/ playpath=bbcarab_ar_364 swfUrl=http://static.ls-cdn.com/player/5.10/livestation-player.swf swfVfy=1 live=1')
+        self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_ar/ls_satlink/b_,264,528,828,.m3u8')
 
 ##############
 ## BBC News ##
@@ -486,7 +499,7 @@ class eNCA(BaseChannel):
     default_action = 'play_stream'
 
     def action_play_stream(self):        
-        self.plugin.set_stream_url('http://hd7.lsops.net/live/enca_en_hls.smil/playlist.m3u8')
+        self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/enca/ls_satlink/b_,264,528,828,.m3u8')
 
 ##############
 ## Sky News ##
@@ -501,12 +514,12 @@ class SkyNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'Sky News Medium', 'stream_url': 'http://ilg.club/streamlink.m3u8?channel_id=31b003ab7e7749a798fe00424e3dd9ff&bitrate=800'})
+        data.update({'action': 'play_stream', 'Title': 'Sky News', 'stream_url': 'plugin://plugin.video.youtube/?action=play_video&videoid=VYlQJbsVs48'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Sky News International', 'stream_url': 'http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/skynews/ls_satlink/b_,264,528,828,.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Sky News Arabia', 'stream_url': 'http://hd7.lsops.net/live/skynewsi_ar_hls.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        #data.update({'action': 'play_stream', 'Title': 'Sky News International', 'stream_url': 'http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8'})
-        #self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
     def action_play_stream(self):        
