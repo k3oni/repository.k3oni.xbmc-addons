@@ -348,23 +348,23 @@ class EuroNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/ar_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/ar_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/en_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/en_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-	data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/fr_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+	data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/fr_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'German', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/de_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'German', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/de_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Italian', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/it_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Italian', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/it_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Portuguese', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/pt_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Portuguese', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/pt_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Russian', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/ru_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Russian', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/ru_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/es_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/es_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Turkish', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/tr_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Turkish', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/tr_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
@@ -425,7 +425,7 @@ class UT(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/live/mp4:380555/playlist.m3u8')
+	self.plugin.set_stream_url('plugin://plugin.video.youtube/?action=play_video&videoid=Dir2cayPxsw')
 
 ################
 ## Rai News24 ##
@@ -514,7 +514,9 @@ class SkyNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Sky News', 'stream_url': 'plugin://plugin.video.youtube/?action=play_video&videoid=VYlQJbsVs48'})
+        data.update({'action': 'play_stream', 'Title': 'Sky News', 'stream_url': 'http://ilg.club/streamlink.m3u8?channel_id=31b003ab7e7749a798fe00424e3dd9ff&bitrate=800'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Sky News HD', 'stream_url': 'plugin://plugin.video.youtube/?action=play_video&videoid=VYlQJbsVs48'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Sky News International', 'stream_url': 'http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/skynews/ls_satlink/b_,264,528,828,.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
