@@ -425,7 +425,7 @@ class UT(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('plugin://plugin.video.youtube/?action=play_video&videoid=Dir2cayPxsw')
+	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
 
 ################
 ## Rai News24 ##
