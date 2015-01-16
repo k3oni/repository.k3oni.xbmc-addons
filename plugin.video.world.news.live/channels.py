@@ -231,45 +231,31 @@ class ABCNews24(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
 
-################
-## BBC Arabic ##
-################
-        
-class BBCARABIC(BaseChannel):
-    playable = True
-    short_name = 'bbc_arabic'
-    long_name = 'BBC Arabic'
-    default_action = 'play_stream'
+#########
+## BBC ##
+#########  
 
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_ar/ls_satlink/b_,264,528,828,.m3u8')
+class BBCNEWS(BaseChannel):
+    playable = False
+    short_name = 'bbc'
+    long_name = 'BBC'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+	data.update({'action': 'play_stream', 'Title': 'BBC World', 'stream_url': 'http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_world/ls_satlink/b_,264,528,828,.m3u8'})
+	self.plugin.add_list_item(data, is_folder=False)
+	data.update({'action': 'play_stream', 'Title': 'BBC Arabic', 'stream_url': 'http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_ar/ls_satlink/b_,264,528,828,.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'BBC Persian', 'stream_url': 'http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_persian/ls_satlink/b_,264,528,828,.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
 
-##############
-## BBC News ##
-##############
-        
-#class BBCNEWS(BaseChannel):
-#    playable = True
-#    short_name = 'bbcnews_en'
-#    long_name = 'BBC News'
-#    default_action = 'play_stream'
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
-#    def action_play_stream(self):
-#        self.plugin.set_stream_url('rtmp://hd4.lsops.net/live/ playpath=bbcnews_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true')
 
-####################
-## BBC World News ##
-####################
-
-class BBCWORLD(BaseChannel):
-    playable = True
-    short_name = 'bbcworld_en'
-    long_name = 'BBC World News'
-    default_action = 'play_stream'
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_world/ls_satlink/b_,264,528,828,.m3u8')
-        
 ##########
 ## CNBC ##
 ##########
