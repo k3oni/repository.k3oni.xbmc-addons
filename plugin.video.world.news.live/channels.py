@@ -224,8 +224,8 @@ class ABCNews24(BaseChannel):
         data.update(self.args)
 	data.update({'action': 'play_stream', 'Title': 'ABC News 24 - (Australia Only)', 'stream_url': 'http://www.abc.net.au/res/streaming/video/hls/news24.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'ABC News 24', 'stream_url': 'rtmp://cp103653.live.edgefcs.net:1935/live?_fcs_vhost=cp103653.live.edgefcs.net&akmfv=1.8 playpath=international_medium@36382 swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
+        #data.update({'action': 'play_stream', 'Title': 'ABC News 24', 'stream_url': 'rtmp://cp103653.live.edgefcs.net:1935/live?_fcs_vhost=cp103653.live.edgefcs.net&akmfv=1.8 playpath=international_medium@36382 swfVfy=true live=true'})
+        #self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
     def action_play_stream(self):        
@@ -404,14 +404,14 @@ class REUTERS(BaseChannel):
 ## UT ##
 ########	
 
-class UT(BaseChannel):
-    playable = True
-    short_name = 'ut'
-    long_name = 'Ukraine Today'
-    default_action = 'play_stream'
+#class UT(BaseChannel):
+#    playable = True
+#    short_name = 'ut'
+#    long_name = 'Ukraine Today'
+#    default_action = 'play_stream'
     
-    def action_play_stream(self):
-	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
+#    def action_play_stream(self):
+#	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
 
 ################
 ## Rai News24 ##
@@ -446,7 +446,7 @@ class PRESSTV(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('http://media23.lsops.net/live/presstv_en_hls.smil/playlist.m3u8')
+	self.plugin.set_stream_url('http://204.107.26.252:1935/live/905.high.stream/HasBahCa.m3u8')
 
 ###############
 ## Bloomberg ##
@@ -666,12 +666,10 @@ class CNN(BaseChannel):
         data = {}
         data.update(self.args)
         data['action'] = 'play_stream'
-        data.update({'stream_url': "http://hls.novotelecom.ru/streaming/cnn/tvrec/playlist.m3u8", 'Title': 'High Quality'})
+        data.update({'stream_url': "http://wpc.c1a9.edgecastcdn.net/hls-live/20C1A9/cnn/ls_satlink/b_528.m3u8", 'Title': 'Medium Quality'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "http://cnn-hls.live.numericable.tv/live/hls/cnn/ipad.m3u8", 'Title': 'Medium Quality'})
-        self.plugin.add_list_item(data, is_folder=False)
-	data.update({'stream_url': "rtmp://c.cdn.livenewschat.eu/edge/ playpath=cnn_live swfUrl='http://msnbclive.eu/player.swf' swfVfy=true live=true", 'Title': 'CNN UK'})
-        self.plugin.add_list_item(data, is_folder=False)
+	#data.update({'stream_url': "rtmp://c.cdn.livenewschat.eu/edge/ playpath=cnn_live swfUrl='http://msnbclive.eu/player.swf' swfVfy=true live=true", 'Title': 'CNN UK'})
+        #self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
     def action_play_stream(self):        
