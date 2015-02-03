@@ -224,8 +224,8 @@ class ABCNews24(BaseChannel):
         data.update(self.args)
 	data.update({'action': 'play_stream', 'Title': 'ABC News 24 - (Australia Only)', 'stream_url': 'http://www.abc.net.au/res/streaming/video/hls/news24.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        #data.update({'action': 'play_stream', 'Title': 'ABC News 24', 'stream_url': 'rtmp://cp103653.live.edgefcs.net:1935/live?_fcs_vhost=cp103653.live.edgefcs.net&akmfv=1.8 playpath=international_medium@36382 swfVfy=true live=true'})
-        #self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'ABC News 24', 'stream_url': 'rtmp://cp103653.live.edgefcs.net:1935/live?_fcs_vhost=cp103653.live.edgefcs.net&akmfv=1.8 playpath=international_medium@36382 swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
     def action_play_stream(self):        
@@ -741,3 +741,16 @@ class CSpan(BaseChannel):
     def action_play_stream(self):
         parser = URLParser(swf_url = self.swf_url)
         self.plugin.set_stream_url(parser(self.args['stream_url']))          
+
+########
+## UT ##
+########
+
+class UT(BaseChannel):
+    playable = True	
+    short_name = 'ut'	
+    long_name = 'Ukraine Today'
+    default_action = 'play_stream'
+    	     
+    def action_play_stream(self):
+	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
