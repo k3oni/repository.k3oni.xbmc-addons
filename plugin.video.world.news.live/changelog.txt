@@ -1,3 +1,5 @@
+1.3.8.6 - Fix Aljazeera AR streams
+
 1.3.8.5 - Add UT and ABC 24 back
 
 1.3.8.4 - Fix CNN, PressTV, remove a couple non working streams
