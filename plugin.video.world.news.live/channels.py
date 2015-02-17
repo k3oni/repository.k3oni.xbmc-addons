@@ -633,14 +633,14 @@ class NHK(BaseChannel):
 ## CCTV News ##
 ###############
 
-#class CCTV(BaseChannel):
-#    playable = True
-#    short_name = 'cctv_news_english'
-#    long_name = 'CCTV News'
-#    default_action = 'play_stream' 
+class CCTV(BaseChannel):
+    playable = True
+    short_name = 'cctv_news_english'
+    long_name = 'CCTV News'
+    default_action = 'play_stream' 
 
-#    def action_play_stream(self):
-#        self.plugin.set_stream_url('http://88.212.11.206:5000/live/22/22.m3u8')   
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://origin2.live.web.tv.streamprovider.net/streams/877ba7a57aa68fd898b838f58d51a69f/index.m3u8')   
 
 ###################
 ## MHz Worldview ##
