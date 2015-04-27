@@ -1,3 +1,5 @@
+1.3.8.9 - Remove ProTV and UT, add Digi24, fix France 24
+
 1.3.8.8 - Add CCTV back
 
 1.3.8.7 - Fix CNBC, add ProTV

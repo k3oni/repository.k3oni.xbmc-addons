@@ -436,21 +436,6 @@ class PRESSTV(BaseChannel):
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://204.107.26.252:1935/live/905.high.stream/HasBahCa.m3u8')
 
-
-############
-## PRO TV ##
-############
-
-class PROTV(BaseChannel):
-    playable = True
-    short_name = 'protv'
-    long_name = 'PRO TV'
-    default_action = 'play_stream' 
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://origin2.live.web.tv.streamprovider.net/streams/5dcc8953f23e3c459cb8ee7e10f4ec11/index.m3u8')
-
-
 ###############
 ## Bloomberg ##
 ###############
@@ -529,11 +514,7 @@ class France24(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://vipwowza.yacast.net/f24_hlslive_ar/smil:iphone.fr24ar.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://vipwowza.yacast.net/f24_hlslive_en/smil:iphone.fr24en.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'http://vipwowza.yacast.net/f24_hlslive_fr/smil:iphone.fr24fr.smil/playlist.m3u8'})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://llnw.live.simplestream.com/coder7/coder.channels.channel14/hls/3/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
@@ -745,15 +726,16 @@ class CSpan(BaseChannel):
         parser = URLParser(swf_url = self.swf_url)
         self.plugin.set_stream_url(parser(self.args['stream_url']))          
 
-########
-## UT ##
-########
 
-class UT(BaseChannel):
-    playable = True	
-    short_name = 'ut'	
-    long_name = 'Ukraine Today'
-    default_action = 'play_stream'
-    	     
+#############
+## Digi 24 ##
+#############
+
+class Digi24(BaseChannel):
+    playable = True
+    short_name = 'digi24'
+    long_name = 'Digi 24'
+    default_action = 'play_stream' 
+
     def action_play_stream(self):
-	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
+        self.plugin.set_stream_url('http://82.76.249.77:80/digi24edge/digi24hdhqhls/index.m3u8')
