@@ -129,7 +129,7 @@ class BBCNEWS(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'BBC World', 'stream_url': 'http://c004.p105.edgesuite.net/i/c004/bbcworld_1@97498/master.m3u8'})
+	data.update({'action': 'play_stream', 'Title': 'BBC World', 'stream_url': 'http://origin2.voronezh.ertelecom.ru/content/private/s147213/d3720264/r971567sd2000000/4dc056d69c5791101b1c85419bce537a665e6eb2/track_2_1200/playlist.m3u8'})
 	self.plugin.add_list_item(data, is_folder=False)
 	data.update({'action': 'play_stream', 'Title': 'BBC Arabic', 'stream_url': 'http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_ar/ls_satlink/b_,264,528,828,.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
@@ -152,6 +152,19 @@ class CNBC(BaseChannel):
 
     def action_play_stream(self):
         self.plugin.set_stream_url('http://origin2.live.web.tv.streamprovider.net/streams/3bc166ba3776c04e987eb242710e75c0/index.m3u8')
+
+##########
+## CBSN ##
+##########
+
+class CBSN(BaseChannel):
+    playable = True
+    short_name = 'cbsn'
+    long_name = 'CBS News'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('http://cbsnews-linear.mdialog.com/video_assets/cbsnews.m3u8?api_key=563b80c1ae4ce359830f572d2496a947&iu=/8264/vaw-can/mobile_web/cbsnews_mobile')
 
 ########
 ## RT ##
@@ -485,7 +498,7 @@ class VESTI(BaseChannel):
 ## UKRAINE TODAY ##
 ###################
 
-class VESTI(BaseChannel):
+class UT(BaseChannel):
     playable = True
     short_name = 'ut'
     long_name = 'UKRAINE TODAY'
@@ -519,6 +532,19 @@ class Tagesschau24(BaseChannel):
 
     def action_play_stream(self):
         self.plugin.set_stream_url('http://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8')
+        
+#########
+## N24 ##
+#########
+
+class N24(BaseChannel):
+    playable = True
+    short_name = 'n24_de'
+    long_name = 'N24'
+    default_action = 'play_stream' 
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://n24-live.hls.adaptive.level3.net/n24/live2cms/live2cms.m3u8')
     
 ###########
 ## CSpan ##
@@ -564,7 +590,7 @@ class Digi24(BaseChannel):
 ## TWC ##
 #########
 
-class Digi24(BaseChannel):
+class TWC(BaseChannel):
     playable = True
     short_name = 'twc_us'
     long_name = 'The Weather Channels US'
